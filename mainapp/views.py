@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from recipes.models import Recipe
 # Create your views here.
 
 
-def get_index(request):
+# def get_index(request):
 
-    print('test')
+#     print('test')
 
-    return HttpResponse('Hello World')
+#     return HttpResponse('Hello World')
 
 
 def get_add(request, a, b):
@@ -20,8 +20,12 @@ def get_add(request, a, b):
 
 def get_index(request):
 
-    texts = {
+    text = {
         'title': 'HI~~~ this is title',
         'text': 'Here is templates'
     }
-    return render(request, 'index.html', texts)
+
+    recipes = Recipe.objects.all()
+    for recipe in recipes:
+        print(recipe.title)
+    return render(request, 'index.html', locals())

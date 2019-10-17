@@ -9,7 +9,12 @@
     <script src='main.js'></script>
 </head>
 <body>
-    {{title}} </br>
-    {{text}}
+    {{text.title}} </br>
+    {{text.text}}   </br>
+
+    {% for recipe in recipes %}
+        {{recipe.title}}
+        <img src={{recipe.image_path}} >
+    {% endfor %}
 </body>
 </html>
