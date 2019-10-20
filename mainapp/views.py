@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from recipes.models import Recipe
+from django.contrib import auth
 # Create your views here.
 
 
@@ -36,4 +37,26 @@ def get_singup(request):
 
 
 def get_login(request):
+
     return render(request, 'login.html')
+
+
+def post_login(request):
+    auth.logout(request)
+
+    username = request.POST['username']
+    password = request.POST['password']
+    print('username: ' + username)
+    print('password: ' + password)
+    user = auth.authenticate(username=username, password=password)
+
+    if user is not None:
+        auth.login(request, user)
+        return redirect('/index')
+    else:
+        return redirect('/index')
+
+
+def post_logout(request):
+    auth.logout(request)
+    return redirect('/index')

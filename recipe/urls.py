@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
-from mainapp.views import get_index, get_add, get_index, get_singup, get_login
+from mainapp.views import get_index, get_add, get_index, get_singup, get_login, post_logout, post_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +25,7 @@ urlpatterns = [
     path('index', get_index),
     path('singup', get_singup),
     path('login', get_login),
+    path('login/log', post_login),
+    path('logout', post_logout)
 
 ]

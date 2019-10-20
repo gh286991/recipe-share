@@ -21,20 +21,21 @@
             <h1>Log in</h1>
         </div>
 
-        <form>
+        <form method = "POST" action = "/login/log">
             <div class="form-group">
                 <label for="exampleInputEmail1">User name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="user" placeholder="Enter user name">
-                <small id="user" class="form-text text-muted">You need use the user name to log in.</small>
+                <input  name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="user" placeholder="Enter user name">
+                <small  class="form-text text-muted">You need use the user name to log in.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input  name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input id="password"  type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
+            {% csrf_token %}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
    </div>
