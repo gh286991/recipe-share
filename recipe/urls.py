@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
-from mainapp.views import get_index, get_add, get_index
+from mainapp.views import get_index, get_add, get_index, get_singup, get_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello', get_index),
     re_path('add/(\d+)/(\d+)', get_add),
-    path('index', get_index)
+    path('index', get_index),
+    path('singup', get_singup),
+    path('login', get_login),
+
 ]

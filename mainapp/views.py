@@ -29,3 +29,11 @@ def get_index(request):
     for recipe in recipes:
         print(recipe.title)
     return render(request, 'index.html', locals())
+
+
+def get_singup(request):
+    return render(request, 'singup.html')
+
+
+def get_login(request):
+    return render(request, 'login.html')
