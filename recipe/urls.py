@@ -16,16 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
-from mainapp.views import get_index, get_add, get_index, get_singup, get_login, post_logout, post_login
+from mainapp.views import get_index, get_add, get_index, get_signup, get_login, post_logout, post_login, post_signup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello', get_index),
     re_path('add/(\d+)/(\d+)', get_add),
     path('index', get_index),
-    path('singup', get_singup),
+    path('signup', get_signup),
     path('login', get_login),
     path('login/log', post_login),
-    path('logout', post_logout)
+    path('logout', post_logout),
+    path('signup/sign_up', post_signup)
 
 ]
