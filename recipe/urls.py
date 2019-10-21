@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import re_path
 from mainapp.views import get_index, get_add, get_index, get_signup, get_login, post_logout, post_login, post_signup
+from recipes.views import get_recipe, post_create_recipe
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,9 @@ urlpatterns = [
     path('login', get_login),
     path('login/log', post_login),
     path('logout', post_logout),
-    path('signup/sign_up', post_signup)
+    path('signup/sign_up', post_signup),
+    path('recipe', get_recipe),
+    path('recipe/create', post_create_recipe),
+
 
 ]

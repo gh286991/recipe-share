@@ -6,13 +6,6 @@ from recipes.models import Recipe
 # Create your views here.
 
 
-# def get_index(request):
-
-#     print('test')
-
-#     return HttpResponse('Hello World')
-
-
 def get_add(request, A, B):
     "This get the sum of A & B"
     num1 = A
