@@ -16,22 +16,39 @@
 <body>
 
     {% include "default/nav.html" %}
-    <div>
-        {{text.title}}
-    </div>
-    <div>
-       {{text.text}}
-    </div>
+    <div style = "margin: 0px auto; margin:30px ; position: relative; min-height: 100%;" >
+        <div  style = "padding-bottom:40px">
+            <div>
+                <h1>分享美食</h1>
+                <p>因美食而歡樂</p>
 
-    <div style = " display: flex; flex-wrap: wrap;  ">
+            </div>
 
-    {% for recipe in recipes %}
-        <div style = "margin :20px; border: 2px black solid; text-align: center">
-            <img src={{recipe.image_path  }} style = "width: 300px; border: 2px black solid" >
-            <div>   Title :  {{recipe.title}}</div>
+            <div style = " display: flex; flex-wrap: wrap; ">
+             {% for recipe in recipes %}
+
+            <div class="card" style=" max-width: 23rem ;margin: 20px auto" >
+
+                <img src={{recipe.image_path }}  class="card-img-top" alt="..." style ="padding: 10px ; max-height: 280px; max-width: 100%; ">
+                <div class="card-body">
+                    <h5 class="card-title">{{recipe.title}}</h5>
+                    <p class="card-text">{{recipe.description}}</p>
+
+                    <form  method = "POST" action = "/recipe/delete">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary" name= "cId" value = {{recipe.id}}>Delete</button>
+                    </form>
+
+
+                </div>
+            </div>
+
+            {% endfor %}
         </div>
-    {% endfor %}
 
+        </div>
+
+        {% include "default/footer.html" %}
     </div>
 
 </body>

@@ -17,14 +17,8 @@ def get_add(request, A, B):
 def get_index(request):
     "This get index page"
 
-    text = {
-        'title': 'HI~~~ this is title',
-        'text': 'Here is templates'
-    }
-
     recipes = Recipe.objects.all()
-    for recipe in recipes:
-        print(recipe.title)
+
     return render(request, 'index.html', locals())
 
 
