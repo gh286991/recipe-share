@@ -24,7 +24,7 @@
 
             </div>
 
-            <div style = " display: flex; flex-wrap: wrap; ">
+            <div style = "display: flex; flex-wrap: wrap; ">
              {% for recipe in recipes %}
 
             <div class="card" style=" max-width: 23rem ;margin: 20px auto" >
@@ -34,12 +34,21 @@
                     <h5 class="card-title">{{recipe.title}}</h5>
                     <p class="card-text">{{recipe.description}}</p>
 
-                    <form  method = "POST" action = "/recipe/delete">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-primary" name= "cId" value = {{recipe.id}}>Delete</button>
-                    </form>
+                    <div style = "display: flex;">
+                        <div style = "margin-left: 160px;margin-right : 20px" >
+                            <form  method = "POST" action = "/recipe/delete">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary" name= "cId" value = {{recipe.id}}>Delete</button>
+                            </form>
+                        </div>
 
-
+                        <div style = "align : center ">
+                            <form  method = "POST" action = "/recipe/update">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary" name= "cId" value = {{recipe.id}}>update</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -18,6 +18,10 @@ def get_index(request):
     "This get index page"
 
     recipes = Recipe.objects.all()
+    user = request.user
+
+    if user.is_authenticated:
+        print(user.username)
 
     return render(request, 'index.html', locals())
 
