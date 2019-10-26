@@ -33,7 +33,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{recipe.title}}</h5>
                     <p class="card-text">{{recipe.description}}</p>
-
+                    <p class="card-text" style ="text-align: right ; margin-bottom: 0px">{{recipe.author}}</p>
+                    <p class="card-text" style ="text-align: right ;color: #909090; margin-top: 0px "> {{recipe.create_data}}</p>
                     <div style = "display: flex;">
                         <div style = "margin-left: 160px;margin-right : 20px" >
                             <form  method = "POST" action = "/recipe/delete">
