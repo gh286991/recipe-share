@@ -17,7 +17,7 @@ $ git clone
 安裝所需要的套件
 
 ```shell
-$ pip -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 啟動伺服器
@@ -27,6 +27,15 @@ $ python manage.py runserver
 ```
 
 如果啟動成功，恭喜可以在 `http://localhost:8000/index` 看到頁面🎉。
+
+第一次啟動可能需要先重建資料庫
+
+```shell
+$ python manage.py makemigrations
+$ python manage.py migrate
+```
+
+
 
 ## 簡介
 
