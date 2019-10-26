@@ -34,7 +34,7 @@
                 <label for="exampleInputPassword1">食譜描述</label>
                 <input  name="description"  class="form-control" >
             </div>
-            <input name="author" value = {{user.username}}>
+            <input name="author" style = "display:none"  value = {{user.username}}>
 
             {% csrf_token %}
             <button type="submit" class="btn btn-primary">馬上分享</button>

@@ -4,10 +4,10 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">Test</a>
+        <a class="navbar-brand" href="/index">食譜分享網站</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
         <li class="nav-item active">
-            <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
         </li>
         </ul>
 
@@ -15,7 +15,7 @@
            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
             {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="login"> HI~~ {{user.username}}</a>
+                    <p class="nav-link" > HI~~ {{user.username}}</p>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="recipe" tabindex="-1" aria-disabled="true">Share recipe</a>
